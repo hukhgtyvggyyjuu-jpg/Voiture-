@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MALI DRIVE 3D</title>
+  <style>
+    body {
+      margin: 0;
+      background: #171717;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 { color: #ffca28; margin-top: 45px; }
+    button {
+      background: #e53935;
+      color: white;
+      padding: 15px 25px;
+      border: 0;
+      border-radius: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+    #road {
+      height: 260px;
+      width: 220px;
+      max-width: 80%;
+      margin: 25px auto;
+      background: #444;
+      border-left: 6px solid white;
+      border-right: 6px solid white;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+    }
+    #car { font-size: 65px; padding-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>🇲🇱 MALI DRIVE 3D</h1>
+  <p>Bienvenue au Mali !</p>
+  <p>Argent virtuel : <span id="money">0</span> FCFA</p>
+  <div id="road"><div id="car">🏎️</div></div>
+  <button onclick="drive()">ACCÉLÉRER</button>
+  <button onclick="earn()">GAGNER 100 FCFA</button>
+  <p id="message">Prêt à conduire ?</p>
+  <script>
+    let money = 0;
+    function drive() {
+      document.getElementById('car').style.transform =
+        'translateX(' + (Math.random() * 80 - 40) + 'px)';
+      document.getElementById('message').textContent =
+        'Tu roules sur les routes du Mali !';
+    }
+    function earn() {
+      money += 100;
+      document.getElementById('money').textContent = money;
+      document.getElementById('message').textContent =
+        'Bravo ! Tu as gagné 100 FCFA virtuels.';
+    }
+  </script>
+</body>
+</html>
